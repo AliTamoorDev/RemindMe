@@ -12,6 +12,7 @@ struct RemindMeApp: App {
     var body: some Scene {
         WindowGroup {
             AlarmListView()
+//                .tint(.white)
         }
     }
 }

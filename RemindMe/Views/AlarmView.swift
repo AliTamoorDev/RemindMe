@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AlarmView: View {
     
-    @State private var selectedWeekdays: Set<Int> = Set(0..<7)
-    @State private var selectedTime = Date()
-    @State private var selectedRingTone: Sounds = .JollyRing
+    @State var selectedWeekdays: Set<Int> = Set(0..<7)
+    @State var selectedTime = Date()
+    @State var selectedRingTone: Sounds = .JollyRing
     @Environment(\.presentationMode) var presentationMode
 
     init() {
@@ -65,6 +65,7 @@ struct AlarmView: View {
     
     private func scheduleNotification() {
         let center = UNUserNotificationCenter.current()
+        let id = UUID()
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
                 let content = UNMutableNotificationContent()
@@ -86,7 +87,7 @@ struct AlarmView: View {
                 for index in selectedWeekdays {
                     dateComponents.weekday = index + 1 // Weekdays are 1-indexed
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-                    let request = UNNotificationRequest(identifier: "alarm-\(index)", content: content, trigger: trigger)
+                    let request = UNNotificationRequest(identifier: "alarm\(index):\(id)", content: content, trigger: trigger)
                     center.add(request) { error in
                         if let error = error {
                             print("Error scheduling notification: \(error.localizedDescription)")

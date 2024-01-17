@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32D369B82B57B68E00ACF24D /* EditAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B72B57B68E00ACF24D /* EditAlarmView.swift */; };
+		32D369BA2B57E03600ACF24D /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B92B57E03600ACF24D /* AlarmModel.swift */; };
 		32E473472B56597A006AC563 /* RemindMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473462B56597A006AC563 /* RemindMeApp.swift */; };
 		32E473492B56597A006AC563 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473482B56597A006AC563 /* AlarmView.swift */; };
 		32E4734B2B56597B006AC563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E4734A2B56597B006AC563 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32D369B72B57B68E00ACF24D /* EditAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmView.swift; sourceTree = "<group>"; };
+		32D369B92B57E03600ACF24D /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		32E473432B56597A006AC563 /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E473462B56597A006AC563 /* RemindMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindMeApp.swift; sourceTree = "<group>"; };
 		32E473482B56597A006AC563 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32D369BB2B57E03C00ACF24D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32D369B92B57E03600ACF24D /* AlarmModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		32E4733A2B56597A006AC563 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				32E473462B56597A006AC563 /* RemindMeApp.swift */,
+				32D369BB2B57E03C00ACF24D /* Model */,
 				32E473562B5666D2006AC563 /* Uitilities */,
 				32E473572B56893B006AC563 /* Views */,
 				32E4734A2B56597B006AC563 /* Assets.xcassets */,
@@ -107,6 +120,7 @@
 				32E473482B56597A006AC563 /* AlarmView.swift */,
 				32E473582B56894D006AC563 /* WeekdaySelectionView.swift */,
 				32E4736C2B56A749006AC563 /* SoundsList.swift */,
+				32D369B72B57B68E00ACF24D /* EditAlarmView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +218,8 @@
 				32E4735B2B5689E7006AC563 /* AlarmListView.swift in Sources */,
 				32E473552B5666CD006AC563 /* Utilities.swift in Sources */,
 				32E473692B56A641006AC563 /* Sounds.swift in Sources */,
+				32D369B82B57B68E00ACF24D /* EditAlarmView.swift in Sources */,
+				32D369BA2B57E03600ACF24D /* AlarmModel.swift in Sources */,
 				32E4736D2B56A749006AC563 /* SoundsList.swift in Sources */,
 				32E473492B56597A006AC563 /* AlarmView.swift in Sources */,
 				32E473472B56597A006AC563 /* RemindMeApp.swift in Sources */,
