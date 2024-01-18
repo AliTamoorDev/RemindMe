@@ -12,7 +12,8 @@ enum Sounds: String, CaseIterable {
     case hellSing = "Hell Sing"
     case JollyRing = "Happy Day"
     case secondAttempt = "Second Attempt"
-    case jb = "JB"
+    case jb = "Johnny Bravo"
+//    case fest = "Festival"
     
     var stringValue: String {
         switch self {
@@ -21,6 +22,7 @@ enum Sounds: String, CaseIterable {
         case .JollyRing: return "jollyRing"
         case .secondAttempt: return "secondAttempt"
         case .jb: return "JB"
+//        case .fest: return "fest"
         }
     }
 }

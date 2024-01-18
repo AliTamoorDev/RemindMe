@@ -1,5 +1,5 @@
 //
-//  Utilities.swift
+//  Shake.swift
 //  RemindMe
 //
 //  Created by Ali Tamoor on 16/01/2024.

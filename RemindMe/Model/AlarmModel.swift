@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct AlarmModel: Hashable {
-    let id = UUID()
+struct AlarmModel: Hashable, Codable {
+    var id = UUID()
     let reminderId: String
     var selectDaysIndex:Set<Int> = []
     var time = ""
@@ -69,5 +69,4 @@ enum Day:Int, Codable, CaseIterable{
             case .Sat: return 7
         }
     }
-    
 }

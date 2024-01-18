@@ -38,7 +38,7 @@ struct WeekdaySelectionView: View {
                             .offset(x: (start && selectedWeekdays.contains(index)) ? 30 : 0)
                             .frame(width: 45, height: 45)
                             .foregroundColor(Color(.label))
-                            .background(selectedWeekdays.contains(index) ? Color.gray : .secondaryBrand)
+                            .background(selectedWeekdays.contains(index) ? Color.tertiaryBrand : .secondaryBrand)
                             .clipShape(Circle())
                     }
                 }

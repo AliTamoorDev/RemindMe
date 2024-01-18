@@ -30,10 +30,10 @@
             filePath = "RemindMe/Views/AlarmView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "scheduleNotification()"
-            landmarkType = "7">
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "AlarmView"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "05EBD32A-A3B8-4631-A856-E4974B9CEFC0 - 57bb4d3976236c21"
@@ -102,16 +102,16 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "38E98D25-C5E0-4872-9B90-2D934FB98303"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RemindMe/Views/AlarmView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "scheduleNotification()"
-            landmarkType = "7">
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "AlarmView"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "38E98D25-C5E0-4872-9B90-2D934FB98303 - f131d61c342ea28e"
@@ -143,132 +143,20 @@
                   endingLineNumber = "73"
                   offsetFromSymbolStart = "984">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E1222285-3E9F-471D-9437-8A640B184F69"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RemindMe/Views/AlarmListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
                <Location
-                  uuid = "E1222285-3E9F-471D-9437-8A640B184F69 - cbbabcf1cab939d8"
+                  uuid = "38E98D25-C5E0-4872-9B90-2D934FB98303 - b3de533d3845bbdc"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarItems&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(trailing: &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in RemindMe.AlarmListView.body.getter : some"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RemindMe.AlarmView.scheduleNotification() -&gt; ()"
                   moduleName = "RemindMe"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/AlarmListView.swift"
+                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/Rem/RemindMe/Views/AlarmView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "1032">
-               </Location>
-               <Location
-                  uuid = "E1222285-3E9F-471D-9437-8A640B184F69 - cbbabcf1cab939d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarItems&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(trailing: &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in RemindMe.AlarmListView.body.getter : some"
-                  moduleName = "RemindMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/AlarmListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "724">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33959107-4A0E-427A-A188-6AFA66E2422A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RemindMe/Views/AlarmListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D099899E-5878-4C71-A054-F89071B37602"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RemindMe/Views/AlarmListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "D099899E-5878-4C71-A054-F89071B37602 - 667d5e63b6513479"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String, Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarItems&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(trailing: &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in RemindMe.AlarmListView.body.getter : some"
-                  moduleName = "RemindMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/AlarmListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "1884">
-               </Location>
-               <Location
-                  uuid = "D099899E-5878-4C71-A054-F89071B37602 - 667d5e63b6513479"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String, Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarItems&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(trailing: &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in RemindMe.AlarmListView.body.getter : some"
-                  moduleName = "RemindMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/AlarmListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "1908">
-               </Location>
-               <Location
-                  uuid = "D099899E-5878-4C71-A054-F89071B37602 - 667d5e63b6513479"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String, Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarItems&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(trailing: &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in RemindMe.AlarmListView.body.getter : some"
-                  moduleName = "RemindMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/AlarmListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "1908">
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "984">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -283,8 +171,8 @@
             filePath = "RemindMe/Views/AlarmListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -324,63 +212,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3641B877-B981-44AE-AEF4-28F43B8F922B"
+            uuid = "3F33F19E-BFD2-4762-8628-36A628BE4D56"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RemindMe/Views/EditAlarmView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "init(selectedWeekdays:selectedTime:selectedRingTone:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3641B877-B981-44AE-AEF4-28F43B8F922B - 7695cd001929a209"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RemindMe.EditAlarmView.init(selectedWeekdays: Swift.Set&lt;Swift.Int&gt;, selectedTime: Foundation.Date, selectedRingTone: RemindMe.Sounds) -&gt; RemindMe.EditAlarmView"
-                  moduleName = "RemindMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/EditAlarmView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "952">
-               </Location>
-               <Location
-                  uuid = "3641B877-B981-44AE-AEF4-28F43B8F922B - 7695cd001929a2ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RemindMe.EditAlarmView.init(selectedWeekdays: Swift.Set&lt;Swift.Int&gt;, selectedTime: Foundation.Date, selectedRingTone: RemindMe.Sounds) -&gt; RemindMe.EditAlarmView"
-                  moduleName = "RemindMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/EditAlarmView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "784">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3F33F19E-BFD2-4762-8628-36A628BE4D56"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RemindMe/Views/EditAlarmView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -423,6 +263,21 @@
                   moduleName = "RemindMe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/RemindMe/RemindMe/Views/EditAlarmView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1832">
+               </Location>
+               <Location
+                  uuid = "3F33F19E-BFD2-4762-8628-36A628BE4D56 - 60d41503d0f3efc5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, RemindMe.WeekdaySelectionView, RemindMe.CustomNavigationPicker)&gt; in RemindMe.EditAlarmView.body.getter : some"
+                  moduleName = "RemindMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alitamoor/Documents/Self%20Learnings/SwiftUI/Rem/RemindMe/Views/EditAlarmView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -543,16 +398,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E0DE3B6-BD6A-4A20-BB88-52242146531D"
+            uuid = "1A5DDB4A-E2BF-4AD8-A6BD-03E4A65846FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RemindMe/Uitilities/Utilities.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "pauseOrDeleteNotifications(reminderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7301492-47A6-4075-9E7C-D98E4845E013"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RemindMe/Uitilities/Utilities.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "pauseOrDeleteNotifications(reminderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96C060C0-2C88-4CA0-86B5-2C53D9D9BCAD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RemindMe/Views/AlarmListView.swift"
+            filePath = "RemindMe/Uitilities/Utilities.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "getDate(data:)"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "fetchNotifications(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27F9A1C1-CF3A-4FD6-A9F0-6383C1F37F21"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RemindMe/Uitilities/Utilities.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "fetchNotifications(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
