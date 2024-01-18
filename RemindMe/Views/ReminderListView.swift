@@ -43,7 +43,7 @@ struct ReminderListView: View {
                     formattedReminders = LocalNotificationManager.getReminderListFromUD() ?? []
                 }
                 .sheet(isPresented: $showSetReminderScreen) {
-                    ReminderView()
+                    AddReminderView()
                         .onDisappear(perform: {
                             formattedReminders = LocalNotificationManager.getReminderListFromUD() ?? []
                         })
@@ -65,21 +65,21 @@ struct ReminderListView: View {
                 })
                 
                 // Navbar Leading button
-//                .navigationBarItems(leading:
-//                                        Button(action: {
-//                    LocalNotificationManager.fetchNotifications { reminders in
-//                        print(reminders.count)
-//                        print(reminders)
-//                        
-//                    }
-//                }) {
-//                    Image(systemName: "eye")
-//                        .resizable()
-//                        .frame(width: 25, height: 18)
-//                        .foregroundColor(.white)
-//                        .font(.title)
-//                        .padding(.leading, 10)
-//                })
+                .navigationBarItems(leading:
+                                        Button(action: {
+                    LocalNotificationManager.fetchNotifications { reminders in
+                        print(reminders.count)
+                        print(reminders)
+                        
+                    }
+                }) {
+                    Image(systemName: "eye")
+                        .resizable()
+                        .frame(width: 25, height: 18)
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .padding(.leading, 10)
+                })
                 
                 if formattedReminders.isEmpty {
                     Text("No Reminders Currently!")
@@ -146,7 +146,7 @@ struct ReminderCell: View {
         var reminders = LocalNotificationManager.getReminderListFromUD()
         reminders = reminders?.map { reminder in
             var reminderObj = reminder
-            if reminderObj.reminderId == reminder.reminderId {
+            if reminderObj.reminderId == self.reminder.reminderId {
                 reminderObj.isScheduled = isScheduled
             }
             return reminderObj

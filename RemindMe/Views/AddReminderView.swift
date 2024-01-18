@@ -1,5 +1,5 @@
 //
-//  ReminderView.swift
+//  AddReminderView.swift
 //  RemindMe
 //
 //  Created by Ali Tamoor on 16/01/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReminderView: View {
+struct AddReminderView: View {
     
     @State var selectedWeekdays: Set<Int> = Set(0..<7)
     @State var selectedTime = Date()
@@ -83,5 +83,5 @@ struct ReminderView: View {
 }
 
 #Preview {
-    ReminderView()
+    AddReminderView()
 }

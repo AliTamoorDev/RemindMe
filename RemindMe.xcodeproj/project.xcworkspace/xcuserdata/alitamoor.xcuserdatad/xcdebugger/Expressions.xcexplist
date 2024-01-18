@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "closure #1 in ReminderCell.editReminder(isScheduled:):ReminderListView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "reminder.reminderId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

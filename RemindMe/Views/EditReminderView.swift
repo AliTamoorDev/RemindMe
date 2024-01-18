@@ -92,6 +92,7 @@ struct EditReminderView: View {
             if reminderObj.reminderId == reminderId {
                 reminderObj.time = formattedTime()
                 reminderObj.selectDaysIndex = selectedWeekdays
+                reminderObj.date = selectedTime
                 reminderObj.selectDays = []
                 selectedWeekdays.forEach { day in
                     let day = Day.allCases[day]
