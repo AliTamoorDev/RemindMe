@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum Sounds: String, CaseIterable {
+enum Sounds: String, Codable, CaseIterable {
     case autumnWind = "Autumn Wind"
-    case hellSing = "Hell Sing"
-    case JollyRing = "Happy Day"
-    case secondAttempt = "Second Attempt"
+    case hellSing = "Happy Day"
+    case jollyRing = "Conventional"
+    case secondAttempt = "Victory"
     case jb = "Johnny Bravo"
 //    case fest = "Festival"
     
@@ -19,7 +19,7 @@ enum Sounds: String, CaseIterable {
         switch self {
         case .autumnWind: return "autumnWind"
         case .hellSing: return "hellSing"
-        case .JollyRing: return "jollyRing"
+        case .jollyRing: return "jollyRing"
         case .secondAttempt: return "secondAttempt"
         case .jb: return "JB"
 //        case .fest: return "fest"

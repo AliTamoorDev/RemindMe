@@ -7,43 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32D369B82B57B68E00ACF24D /* EditAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B72B57B68E00ACF24D /* EditAlarmView.swift */; };
-		32D369BA2B57E03600ACF24D /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B92B57E03600ACF24D /* AlarmModel.swift */; };
+		32D369B82B57B68E00ACF24D /* EditReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B72B57B68E00ACF24D /* EditReminderView.swift */; };
+		32D369BA2B57E03600ACF24D /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B92B57E03600ACF24D /* ReminderModel.swift */; };
 		32E473472B56597A006AC563 /* RemindMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473462B56597A006AC563 /* RemindMeApp.swift */; };
-		32E473492B56597A006AC563 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473482B56597A006AC563 /* AlarmView.swift */; };
+		32E473492B56597A006AC563 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473482B56597A006AC563 /* ReminderView.swift */; };
 		32E4734B2B56597B006AC563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E4734A2B56597B006AC563 /* Assets.xcassets */; };
 		32E4734E2B56597B006AC563 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E4734D2B56597B006AC563 /* Preview Assets.xcassets */; };
 		32E473552B5666CD006AC563 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473542B5666CD006AC563 /* Shake.swift */; };
 		32E473592B56894D006AC563 /* WeekdaySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473582B56894D006AC563 /* WeekdaySelectionView.swift */; };
-		32E4735B2B5689E7006AC563 /* AlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4735A2B5689E7006AC563 /* AlarmListView.swift */; };
+		32E4735B2B5689E7006AC563 /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4735A2B5689E7006AC563 /* ReminderListView.swift */; };
 		32E473642B56A624006AC563 /* autumnWind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32E473602B56A624006AC563 /* autumnWind.mp3 */; };
 		32E473652B56A624006AC563 /* hellSing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32E473612B56A624006AC563 /* hellSing.mp3 */; };
 		32E473662B56A624006AC563 /* jollyRing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32E473622B56A624006AC563 /* jollyRing.mp3 */; };
 		32E473672B56A624006AC563 /* secondAttempt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32E473632B56A624006AC563 /* secondAttempt.mp3 */; };
 		32E473692B56A641006AC563 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473682B56A641006AC563 /* Sounds.swift */; };
-		32E4736D2B56A749006AC563 /* SoundsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4736C2B56A749006AC563 /* SoundsList.swift */; };
+		32E4736D2B56A749006AC563 /* CustomNavigationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4736C2B56A749006AC563 /* CustomNavigationPicker.swift */; };
 		32E473742B56C494006AC563 /* JB.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32E473732B56C494006AC563 /* JB.mp3 */; };
 		32ED69F82B5910C70083B739 /* fest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32ED69F72B5910C70083B739 /* fest.mp3 */; };
 		32ED69FA2B592C0D0083B739 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ED69F92B592C0D0083B739 /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32D369B72B57B68E00ACF24D /* EditAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmView.swift; sourceTree = "<group>"; };
-		32D369B92B57E03600ACF24D /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
+		32D369B72B57B68E00ACF24D /* EditReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReminderView.swift; sourceTree = "<group>"; };
+		32D369B92B57E03600ACF24D /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		32E473432B56597A006AC563 /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E473462B56597A006AC563 /* RemindMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindMeApp.swift; sourceTree = "<group>"; };
-		32E473482B56597A006AC563 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		32E473482B56597A006AC563 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		32E4734A2B56597B006AC563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32E4734D2B56597B006AC563 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32E473542B5666CD006AC563 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		32E473582B56894D006AC563 /* WeekdaySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaySelectionView.swift; sourceTree = "<group>"; };
-		32E4735A2B5689E7006AC563 /* AlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListView.swift; sourceTree = "<group>"; };
+		32E4735A2B5689E7006AC563 /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
 		32E473602B56A624006AC563 /* autumnWind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = autumnWind.mp3; sourceTree = "<group>"; };
 		32E473612B56A624006AC563 /* hellSing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hellSing.mp3; sourceTree = "<group>"; };
 		32E473622B56A624006AC563 /* jollyRing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jollyRing.mp3; sourceTree = "<group>"; };
 		32E473632B56A624006AC563 /* secondAttempt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secondAttempt.mp3; sourceTree = "<group>"; };
 		32E473682B56A641006AC563 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
-		32E4736C2B56A749006AC563 /* SoundsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsList.swift; sourceTree = "<group>"; };
+		32E4736C2B56A749006AC563 /* CustomNavigationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationPicker.swift; sourceTree = "<group>"; };
 		32E473732B56C494006AC563 /* JB.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = JB.mp3; sourceTree = "<group>"; };
 		32ED69F72B5910C70083B739 /* fest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fest.mp3; sourceTree = "<group>"; };
 		32ED69F92B592C0D0083B739 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		32D369BB2B57E03C00ACF24D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				32D369B92B57E03600ACF24D /* AlarmModel.swift */,
+				32D369B92B57E03600ACF24D /* ReminderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,11 +119,11 @@
 		32E473572B56893B006AC563 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32E4735A2B5689E7006AC563 /* AlarmListView.swift */,
-				32E473482B56597A006AC563 /* AlarmView.swift */,
+				32E4735A2B5689E7006AC563 /* ReminderListView.swift */,
+				32E473482B56597A006AC563 /* ReminderView.swift */,
+				32D369B72B57B68E00ACF24D /* EditReminderView.swift */,
 				32E473582B56894D006AC563 /* WeekdaySelectionView.swift */,
-				32E4736C2B56A749006AC563 /* SoundsList.swift */,
-				32D369B72B57B68E00ACF24D /* EditAlarmView.swift */,
+				32E4736C2B56A749006AC563 /* CustomNavigationPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,14 +218,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				32E473592B56894D006AC563 /* WeekdaySelectionView.swift in Sources */,
-				32E4735B2B5689E7006AC563 /* AlarmListView.swift in Sources */,
+				32E4735B2B5689E7006AC563 /* ReminderListView.swift in Sources */,
 				32E473552B5666CD006AC563 /* Shake.swift in Sources */,
 				32E473692B56A641006AC563 /* Sounds.swift in Sources */,
-				32D369B82B57B68E00ACF24D /* EditAlarmView.swift in Sources */,
-				32D369BA2B57E03600ACF24D /* AlarmModel.swift in Sources */,
+				32D369B82B57B68E00ACF24D /* EditReminderView.swift in Sources */,
+				32D369BA2B57E03600ACF24D /* ReminderModel.swift in Sources */,
 				32ED69FA2B592C0D0083B739 /* LocalNotificationManager.swift in Sources */,
-				32E4736D2B56A749006AC563 /* SoundsList.swift in Sources */,
-				32E473492B56597A006AC563 /* AlarmView.swift in Sources */,
+				32E4736D2B56A749006AC563 /* CustomNavigationPicker.swift in Sources */,
+				32E473492B56597A006AC563 /* ReminderView.swift in Sources */,
 				32E473472B56597A006AC563 /* RemindMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import SwiftUI
 struct RemindMeApp: App {
     var body: some Scene {
         WindowGroup {
-            AlarmListView()
+            ReminderListView()
 //                .tint(.white)
         }
     }

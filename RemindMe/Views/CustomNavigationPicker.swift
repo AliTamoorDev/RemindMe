@@ -84,5 +84,5 @@ struct CustomNavigationPickerView: View {
 
 
 #Preview {
-    CustomNavigationPicker(strengths: Sounds.allCases, selectedStrength: .constant(Sounds.JollyRing))
+    CustomNavigationPicker(strengths: Sounds.allCases, selectedStrength: .constant(Sounds.jollyRing))
 }

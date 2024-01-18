@@ -57,6 +57,7 @@ struct ReminderView: View {
                     reminderObj.reminderId = id
                     reminderObj.selectDaysIndex = selectedWeekdays
                     reminderObj.time = formattedTime()
+                    reminderObj.date = selectedTime
                     reminderObj.selectDaysIndex = selectedWeekdays
                     selectedWeekdays.forEach { day in
                         let day = Day.allCases[day]

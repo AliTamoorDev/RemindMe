@@ -73,10 +73,10 @@ struct EditReminderView: View {
     func deleteReminder() {
         LocalNotificationManager.pauseOrDeleteNotifications(reminderId: reminderId)
         
-        var reminders = LocalNotificationManager.getAlarmModel()
+        var reminders = LocalNotificationManager.getReminderListFromUD()
         reminders = reminders?.filter{ $0.reminderId != reminderId }
         
-        LocalNotificationManager.saveAlarmModel(reminders ?? [])
+        LocalNotificationManager.saveRemindersToUD(reminders ?? [])
         
         presentationMode.wrappedValue.dismiss()
     }
@@ -86,9 +86,9 @@ struct EditReminderView: View {
         LocalNotificationManager.pauseOrDeleteNotifications(reminderId: reminderId)
         
         // Modifying the selected reminder
-        var reminders = LocalNotificationManager.getAlarmModel()
-        reminders = reminders?.map { alarm in
-            var reminderObj = alarm
+        var reminders = LocalNotificationManager.getReminderListFromUD()
+        reminders = reminders?.map { reminder in
+            var reminderObj = reminder
             if reminderObj.reminderId == reminderId {
                 reminderObj.time = formattedTime()
                 reminderObj.selectDaysIndex = selectedWeekdays
@@ -103,7 +103,7 @@ struct EditReminderView: View {
         }
         
         // Saving the Modified reminder
-        LocalNotificationManager.saveAlarmModel(reminders ?? [])
+        LocalNotificationManager.saveRemindersToUD(reminders ?? [])
         
         // Creating Modified Version of Local Notification
         LocalNotificationManager.scheduleNotification(id: reminderId, selectedTime: selectedTime, selectedWeekdays: selectedWeekdays, selectedRingTone: selectedRingTone.stringValue) {
@@ -122,5 +122,5 @@ struct EditReminderView: View {
 }
 
 #Preview {
-    EditReminderView(selectedWeekdays: Set(0..<7), selectedTime: .now, selectedRingTone: .JollyRing, id: "")
+    EditReminderView(selectedWeekdays: Set(0..<7), selectedTime: .now, selectedRingTone: .jollyRing, id: "")
 }

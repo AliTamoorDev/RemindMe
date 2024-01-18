@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct LocalNotificationManager {
-    static func scheduleNotification(selectedTime: Date, selectedWeekdays: Set<Int>, selectedRingTone: String, completion: @escaping ()->()) {
+    static func scheduleNotification(id: String, selectedTime: Date, selectedWeekdays: Set<Int>, selectedRingTone: String, completion: @escaping ()->()) {
         let center = UNUserNotificationCenter.current()
-        let id = UUID()
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
                 let content = UNMutableNotificationContent()
@@ -32,16 +31,16 @@ struct LocalNotificationManager {
                 for index in selectedWeekdays {
                     dateComponents.weekday = index + 1 // Weekdays are 1-indexed
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-                    let request = UNNotificationRequest(identifier: "alarm\(index):\(id)", content: content, trigger: trigger)
+                    let request = UNNotificationRequest(identifier: "reminder\(index):\(id)", content: content, trigger: trigger)
                     center.add(request) { error in
                         if let error = error {
                             print("Error scheduling notification: \(error.localizedDescription)")
                         } else {
                             print("Notification for day \(index+1) scheduled successfully")
                         }
-                        completion()
                     }
                 }
+                completion()
             } else {
                 completion()
                 print("Permission denied for notifications")
@@ -49,9 +48,9 @@ struct LocalNotificationManager {
         }
     }
     
-    static func fetchNotifications(completion: @escaping ([AlarmModel] )->()){
+    static func fetchNotifications(completion: @escaping ([ReminderModel] )->()){
         var scheduledNotifications: [String: [UNNotificationRequest]] = [:]
-        var formattedNotifications = [AlarmModel]()
+        var formattedNotifications = [ReminderModel]()
 
         UNUserNotificationCenter.current().getPendingNotificationRequests { (reqs) in
             scheduledNotifications = [:]
@@ -66,25 +65,25 @@ struct LocalNotificationManager {
             }
             
             scheduledNotifications.forEach { (key: String, value: [UNNotificationRequest]) in
-                var alarmObj = AlarmModel(reminderId: key)
-                for alarm in value {
-                    if let dc = (alarm.trigger as? UNCalendarNotificationTrigger)?.dateComponents {
+                var reminderObj = ReminderModel(reminderId: key)
+                for reminder in value {
+                    if let dc = (reminder.trigger as? UNCalendarNotificationTrigger)?.dateComponents {
                         let day = Day.allCases[(dc.weekday ?? 0) - 1]
-                        alarmObj.selectDays.insert(day)
-                        alarmObj.selectDaysIndex.insert((dc.weekday ?? 0) - 1)
-                        alarmObj.date = getDate(data: dc) ?? .now
+                        reminderObj.selectDays.insert(day)
+                        reminderObj.selectDaysIndex.insert((dc.weekday ?? 0) - 1)
+                        reminderObj.date = getDate(data: dc) ?? .now
                         
                         if let hour = dc.hour, let minute = dc.minute {
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateFormat = "h:mm a"
                             
                             if let date = Calendar.current.date(bySettingHour: hour, minute: minute, second: 0, of: Date()) {
-                                alarmObj.time = dateFormatter.string(from: date)
+                                reminderObj.time = dateFormatter.string(from: date)
                             }
                         }
                     }
                 }
-                formattedNotifications.append(alarmObj)
+                formattedNotifications.append(reminderObj)
             }
             if let dc = (reqs.first?.trigger as? UNCalendarNotificationTrigger)?.dateComponents {
                 print("\(dc.hour ?? 0):\(dc.minute ?? 0)")
@@ -126,25 +125,25 @@ struct LocalNotificationManager {
     
     // MARK: - User Default Methods
     
-    func saveAlarmModel(_ alarmModel: [AlarmModel]) {
+    static func saveRemindersToUD(_ reminderModel: [ReminderModel]) {
         do {
             let encoder = JSONEncoder()
-            let encodedData = try encoder.encode(alarmModel)
-            UserDefaults.standard.set(encodedData, forKey: "alarmModelKey")
+            let encodedData = try encoder.encode(reminderModel.sorted(by: {$0.date < $1.date}))
+            UserDefaults.standard.set(encodedData, forKey: "reminderModelKey")
         } catch {
-            print("Error encoding AlarmModel: \(error.localizedDescription)")
+            print("Error encoding ReminderModel: \(error.localizedDescription)")
         }
     }
 
-    // Function to retrieve AlarmModel from UserDefaults
-    func getAlarmModel() -> [AlarmModel]? {
-        if let encodedData = UserDefaults.standard.data(forKey: "alarmModelKey") {
+    // Function to retrieve ReminderModel from UserDefaults
+    static func getReminderListFromUD() -> [ReminderModel]? {
+        if let encodedData = UserDefaults.standard.data(forKey: "reminderModelKey") {
             do {
                 let decoder = JSONDecoder()
-                let alarmModel = try decoder.decode([AlarmModel].self, from: encodedData)
-                return alarmModel
+                let reminderModel = try decoder.decode([ReminderModel].self, from: encodedData)
+                return reminderModel
             } catch {
-                print("Error decoding AlarmModel: \(error.localizedDescription)")
+                print("Error decoding ReminderModel: \(error.localizedDescription)")
                 return nil
             }
         }

@@ -1,5 +1,5 @@
 //
-//  AlarmModel.swift
+//  ReminderModel.swift
 //  RemindMe
 //
 //  Created by Ali Tamoor on 17/01/2024.

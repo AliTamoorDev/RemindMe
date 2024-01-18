@@ -1,5 +1,5 @@
 //
-//  AlarmListView.swift
+//  ReminderListView.swift
 //  RemindMe
 //
 //  Created by Ali Tamoor on 16/01/2024.
@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ReminderListView: View {
     
-    @State var showSetAlarmScreen = false
-    @State var showEditAlarmScreen = false
+    @State var showSetReminderScreen = false
+    @State var showEditReminderScreen = false
     
-    @State var formattedReminders = [AlarmModel]()
+    @State var formattedReminders = [ReminderModel]()
     
     @State var selectedReminderTime: Date = .now
     @State var selectedReminderWeekDays = Set(0..<7)
     
-    @State var pausedReminders = [AlarmModel]()
+    @State var pausedReminders = [ReminderModel]()
     
     
     var body: some View {
@@ -36,16 +36,16 @@ struct ReminderListView: View {
                         })
                     }
                 }
-                .navigationDestination(for: AlarmModel.self) { item in
-                    EditAlarmView(selectedWeekdays: item.selectDaysIndex, selectedTime: item.date, selectedRingTone: item.sound, id: item.reminderId)
+                .navigationDestination(for: ReminderModel.self) { item in
+                    EditReminderView(selectedWeekdays: item.selectDaysIndex, selectedTime: item.date, selectedRingTone: item.sound, id: item.reminderId)
                 }
                 .onAppear {
-                    formattedReminders = LocalNotificationManager.getAlarmModel() ?? []
+                    formattedReminders = LocalNotificationManager.getReminderListFromUD() ?? []
                 }
-                .sheet(isPresented: $showSetAlarmScreen) {
-                    AlarmView()
+                .sheet(isPresented: $showSetReminderScreen) {
+                    ReminderView()
                         .onDisappear(perform: {
-                            formattedReminders = LocalNotificationManager.getAlarmModel() ?? []
+                            formattedReminders = LocalNotificationManager.getReminderListFromUD() ?? []
                         })
                 }
                 .navigationTitle("Reminders")
@@ -54,7 +54,7 @@ struct ReminderListView: View {
                 // Navbar Trailing button
                 .navigationBarItems(trailing:
                                         Button(action: {
-                    showSetAlarmScreen = true
+                    showSetReminderScreen = true
                 }) {
                     Image(systemName: "plus")
                         .resizable()
@@ -65,27 +65,28 @@ struct ReminderListView: View {
                 })
                 
                 // Navbar Leading button
-                .navigationBarItems(leading:
-                                        Button(action: {
-                    LocalNotificationManager.fetchNotifications { reminders in
-                        print(reminders.count)
-                        print(reminders)
-                        
-                    }
-                }) {
-                    Image(systemName: "eye")
-                        .resizable()
-                        .frame(width: 25, height: 20)
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .padding(.trailing, 10)
-                })
+//                .navigationBarItems(leading:
+//                                        Button(action: {
+//                    LocalNotificationManager.fetchNotifications { reminders in
+//                        print(reminders.count)
+//                        print(reminders)
+//                        
+//                    }
+//                }) {
+//                    Image(systemName: "eye")
+//                        .resizable()
+//                        .frame(width: 25, height: 18)
+//                        .foregroundColor(.white)
+//                        .font(.title)
+//                        .padding(.leading, 10)
+//                })
                 
                 if formattedReminders.isEmpty {
                     Text("No Reminders Currently!")
-                        .font(.title)
+                        .font(.title2)
                         .fontWeight(.semibold)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.gray)
+                        .padding(.bottom)
                 }
             }
         }
@@ -96,7 +97,7 @@ struct ReminderListView: View {
     func deleteReminder(indexSet: IndexSet) {
         LocalNotificationManager.pauseOrDeleteNotifications(reminderId: formattedReminders[indexSet.first ?? 0].reminderId)
         formattedReminders.remove(atOffsets: indexSet)
-        LocalNotificationManager.saveAlarmModel(formattedReminders)
+        LocalNotificationManager.saveRemindersToUD(formattedReminders)
     }
 }
 
@@ -107,8 +108,8 @@ struct ReminderListView: View {
 struct ReminderCell: View {
     
     @State var isReminderScheduled = true
-    @Binding var reminder: AlarmModel
-    @Binding var pausedReminders: [AlarmModel]
+    @Binding var reminder: ReminderModel
+    @Binding var pausedReminders: [ReminderModel]
     
     var index: Int
     
@@ -142,9 +143,9 @@ struct ReminderCell: View {
     func editReminder(isScheduled: Bool) {
         
         // Modifying the selected reminder
-        var reminders = LocalNotificationManager.getAlarmModel()
-        reminders = reminders?.map { alarm in
-            var reminderObj = alarm
+        var reminders = LocalNotificationManager.getReminderListFromUD()
+        reminders = reminders?.map { reminder in
+            var reminderObj = reminder
             if reminderObj.reminderId == reminder.reminderId {
                 reminderObj.isScheduled = isScheduled
             }
@@ -152,6 +153,6 @@ struct ReminderCell: View {
         }
         
         // Saving the Modified reminder
-        LocalNotificationManager.saveAlarmModel(reminders ?? [])
+        LocalNotificationManager.saveRemindersToUD(reminders ?? [])
     }
 }
