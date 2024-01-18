@@ -1,5 +1,5 @@
 //
-//  EditAlarmView.swift
+//  EditReminderView.swift
 //  RemindMe
 //
 //  Created by Ali Tamoor on 17/01/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditAlarmView: View {
+struct EditReminderView: View {
     
     @State var selectedWeekdays: Set<Int> = Set(0...6)
     @State var selectedTime: Date = .now
@@ -41,8 +41,7 @@ struct EditAlarmView: View {
             CustomNavigationPicker(strengths: Sounds.allCases, selectedStrength: $selectedRingTone)
             
             Button(action: {
-                LocalNotificationManager.pauseOrDeleteNotifications(reminderId: reminderId)
-                presentationMode.wrappedValue.dismiss()
+                self.deleteReminder()
             }, label: {
                 Text("Delete Reminder")
                     .font(.headline)
@@ -62,9 +61,7 @@ struct EditAlarmView: View {
         
         .navigationBarItems(trailing:
                                 Button(action: {
-            LocalNotificationManager.scheduleNotification(selectedTime: selectedTime, selectedWeekdays: selectedWeekdays, selectedRingTone: selectedRingTone.stringValue) {
-                presentationMode.wrappedValue.dismiss()
-            }
+            self.editReminder()
         }) {
             Text("Save")
                 .foregroundStyle(Color(.label))
@@ -73,6 +70,49 @@ struct EditAlarmView: View {
     
     
     // MARK: - Functions
+    func deleteReminder() {
+        LocalNotificationManager.pauseOrDeleteNotifications(reminderId: reminderId)
+        
+        var reminders = LocalNotificationManager.getAlarmModel()
+        reminders = reminders?.filter{ $0.reminderId != reminderId }
+        
+        LocalNotificationManager.saveAlarmModel(reminders ?? [])
+        
+        presentationMode.wrappedValue.dismiss()
+    }
+    
+    func editReminder() {
+        // Deleting Already Scheduled Local Notification
+        LocalNotificationManager.pauseOrDeleteNotifications(reminderId: reminderId)
+        
+        // Modifying the selected reminder
+        var reminders = LocalNotificationManager.getAlarmModel()
+        reminders = reminders?.map { alarm in
+            var reminderObj = alarm
+            if reminderObj.reminderId == reminderId {
+                reminderObj.time = formattedTime()
+                reminderObj.selectDaysIndex = selectedWeekdays
+                reminderObj.selectDays = []
+                selectedWeekdays.forEach { day in
+                    let day = Day.allCases[day]
+                    reminderObj.selectDays.insert(day)
+                }
+                reminderObj.sound = selectedRingTone
+            }
+            return reminderObj
+        }
+        
+        // Saving the Modified reminder
+        LocalNotificationManager.saveAlarmModel(reminders ?? [])
+        
+        // Creating Modified Version of Local Notification
+        LocalNotificationManager.scheduleNotification(id: reminderId, selectedTime: selectedTime, selectedWeekdays: selectedWeekdays, selectedRingTone: selectedRingTone.stringValue) {
+            DispatchQueue.main.async {
+                presentationMode.wrappedValue.dismiss()
+
+            }
+        }
+    }
     
     func formattedTime() -> String {
         let formatter = DateFormatter()
@@ -82,5 +122,5 @@ struct EditAlarmView: View {
 }
 
 #Preview {
-    EditAlarmView(selectedWeekdays: Set(0..<7), selectedTime: .now, selectedRingTone: .JollyRing, id: "")
+    EditReminderView(selectedWeekdays: Set(0..<7), selectedTime: .now, selectedRingTone: .JollyRing, id: "")
 }

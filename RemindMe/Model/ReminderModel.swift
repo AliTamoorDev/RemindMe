@@ -7,11 +7,14 @@
 
 import Foundation
 
-struct AlarmModel: Hashable, Codable {
+struct ReminderModel: Hashable, Codable {
     var id = UUID()
-    let reminderId: String
+    var reminderId: String = ""
     var selectDaysIndex:Set<Int> = []
     var time = ""
+    var sound: Sounds = .autumnWind
+    var isScheduled = true
+    
     var date = Date.now
     var selectDays:Set<Day> = []
     var repeatDay:String{
