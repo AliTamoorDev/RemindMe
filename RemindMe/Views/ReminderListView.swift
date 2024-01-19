@@ -65,21 +65,22 @@ struct ReminderListView: View {
                 })
                 
                 // Navbar Leading button
-                .navigationBarItems(leading:
-                                        Button(action: {
-                    LocalNotificationManager.fetchNotifications { reminders in
-                        print(reminders.count)
-                        print(reminders)
-                        
-                    }
-                }) {
-                    Image(systemName: "eye")
-                        .resizable()
-                        .frame(width: 25, height: 18)
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .padding(.leading, 10)
-                })
+                
+//                .navigationBarItems(leading:
+//                                        Button(action: {
+//                    LocalNotificationManager.fetchNotifications { reminders in
+//                        print(reminders.count)
+//                        print(reminders)
+//                        
+//                    }
+//                }) {
+//                    Image(systemName: "eye")
+//                        .resizable()
+//                        .frame(width: 25, height: 18)
+//                        .foregroundColor(.white)
+//                        .font(.title)
+//                        .padding(.leading, 10)
+//                })
                 
                 if formattedReminders.isEmpty {
                     Text("No Reminders Currently!")
