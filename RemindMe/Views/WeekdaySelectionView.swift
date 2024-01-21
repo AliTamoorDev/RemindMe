@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+// Custom widget to select weekdays for a reminder
 struct WeekdaySelectionView: View {
     @Binding var selectedWeekdays: Set<Int>
     @State private var numberOfShakes = 0.0
@@ -50,7 +50,8 @@ struct WeekdaySelectionView: View {
             Color.secondaryBrand
         }
     }
-
+    
+    // To handle logic for selecting or removing weekdays
     func toggleWeekday(_ index: Int) {
         // At least one weekday should remain selected
         currentSelectedWeekDays = selectedWeekdays.count
@@ -63,13 +64,15 @@ struct WeekdaySelectionView: View {
             print(selectedWeekdays.count)
         }
     }
-
+    
+    // To get short symbols indicating weekdays
     func weekdaySymbol(_ index: Int) -> String {
         let calendar = Calendar.current
         let weekdaySymbols = calendar.shortWeekdaySymbols
         return weekdaySymbols[index]
     }
-
+    
+    // To modified label representing which weekdays are selected
     func selectionLabelText() -> String {
         let selectedDays = selectedWeekdays.sorted()
 

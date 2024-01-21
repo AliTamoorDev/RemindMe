@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LocalNotificationManager {
+    
+    // To schedule reminders with required configurations
     static func scheduleNotification(id: String, selectedTime: Date, selectedWeekdays: Set<Int>, selectedRingTone: String, completion: @escaping ()->()) {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
@@ -20,7 +22,7 @@ struct LocalNotificationManager {
                 let userTimeZone = TimeZone.current
                 let calendar = Calendar.current
                 
-                let localTime = calendar.date(bySettingHour: calendar.component(.hour, from: selectedTime),
+                _ = calendar.date(bySettingHour: calendar.component(.hour, from: selectedTime),
                                               minute: calendar.component(.minute, from: selectedTime),
                                               second: 0, of: selectedTime)
                 
@@ -48,6 +50,7 @@ struct LocalNotificationManager {
         }
     }
     
+    // To fetch all pending reminders
     static func fetchNotifications(completion: @escaping ([ReminderModel] )->()){
         var scheduledNotifications: [String: [UNNotificationRequest]] = [:]
         var formattedNotifications = [ReminderModel]()
@@ -93,6 +96,7 @@ struct LocalNotificationManager {
         }
     }
     
+    // To delete pending reminders
     static func pauseOrDeleteNotifications(reminderId: String) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { (reqs) in
             var ids =  [String]()
@@ -105,6 +109,7 @@ struct LocalNotificationManager {
         }
     }
     
+    // To change date in required format
     static func getDate(data: DateComponents) -> Date? {
         let calendar = Calendar.current
         let hour = data.hour ?? 0
@@ -125,6 +130,8 @@ struct LocalNotificationManager {
     
     // MARK: - User Default Methods
     
+    // Function to Save ReminderModel to UserDefaults
+
     static func saveRemindersToUD(_ reminderModel: [ReminderModel]) {
         do {
             let encoder = JSONEncoder()
