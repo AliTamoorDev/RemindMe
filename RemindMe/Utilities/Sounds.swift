@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Enum to set different sounds for scheduling a reminder
 enum Sounds: String, Codable, CaseIterable {
     case autumnWind = "Autumn Wind"
     case hellSing = "Happy Day"

@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFoundation
 
+// Screen for customize selection of sounds for a reminder
 struct CustomNavigationPicker: View {
 
     var strengths: [Sounds]
@@ -32,6 +33,7 @@ struct CustomNavigationPicker: View {
     }
 }
 
+// Widget for customize selection of sounds for a reminder
 struct CustomNavigationPickerView: View {
     
     @Binding var selectedStrength: Sounds
@@ -42,7 +44,7 @@ struct CustomNavigationPickerView: View {
     var body: some View {
         Form {
             Section {
-                ForEach(0..<strengths.count){ index in
+                ForEach(0..<strengths.count, id: \.self){ index in
                     HStack {
                         Button(action: {
                             selectedStrength = strengths[index]
@@ -67,6 +69,7 @@ struct CustomNavigationPickerView: View {
         }
     }
     
+    // To play a audio upon selecting a sound
     func playAudio(fileName: String) {
             guard let path = Bundle.main.path(forResource: fileName, ofType: "mp3") else {
                 print("Audio file not found")

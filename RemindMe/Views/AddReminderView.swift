@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Screen to create new reminders
 struct AddReminderView: View {
     
     @State var selectedWeekdays: Set<Int> = Set(0..<7)
@@ -15,6 +16,7 @@ struct AddReminderView: View {
     @Environment(\.presentationMode) var presentationMode
 
     init() {
+        // To set color of navigationbar items to white
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
     }
@@ -49,6 +51,7 @@ struct AddReminderView: View {
         
             .navigationBarItems(trailing:
                                     Button(action: {
+                // To save a new reminder locally with all the user set configurations
                 let id = UUID().uuidString
                 LocalNotificationManager.scheduleNotification(id: id, selectedTime: selectedTime, selectedWeekdays: selectedWeekdays, selectedRingTone: selectedRingTone.stringValue) {
                     
@@ -75,6 +78,7 @@ struct AddReminderView: View {
         }
     }
     
+    // To convert time to string
     func formattedTime() -> String {
         let formatter = DateFormatter()
         formatter.timeStyle = .short

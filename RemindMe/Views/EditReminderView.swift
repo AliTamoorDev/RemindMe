@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Screen to edit a reminder
 struct EditReminderView: View {
     
     @State var selectedWeekdays: Set<Int> = Set(0...6)
@@ -70,6 +71,8 @@ struct EditReminderView: View {
     
     
     // MARK: - Functions
+    
+    // To delete a scheduled reminder from user notification and also locally from UserDefaults
     func deleteReminder() {
         LocalNotificationManager.pauseOrDeleteNotifications(reminderId: reminderId)
         
@@ -81,6 +84,7 @@ struct EditReminderView: View {
         presentationMode.wrappedValue.dismiss()
     }
     
+    // To Edit a scheduled reminder from user notification and also locally from UserDefaults
     func editReminder() {
         // Deleting Already Scheduled Local Notification
         LocalNotificationManager.pauseOrDeleteNotifications(reminderId: reminderId)
@@ -115,6 +119,7 @@ struct EditReminderView: View {
         }
     }
     
+    // To convert time to string
     func formattedTime() -> String {
         let formatter = DateFormatter()
         formatter.timeStyle = .short

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Model for locally storing reminders
 struct ReminderModel: Hashable, Codable {
     var id = UUID()
     var reminderId: String = ""

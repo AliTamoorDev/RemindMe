@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// To add shake animation on a view
 struct Shake: AnimatableModifier {
     var shakes: CGFloat = 0
     
@@ -24,6 +25,7 @@ struct Shake: AnimatableModifier {
     }
 }
 
+// To create a shake modifier
 extension View {
     func shake(with shakes: CGFloat) -> some View {
         modifier(Shake(shakes: shakes))
