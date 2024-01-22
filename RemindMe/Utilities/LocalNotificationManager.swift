@@ -7,16 +7,17 @@
 
 import SwiftUI
 
+// Static Struct Manage all the notification in NotificationCenter and locally saved in UserDefaults
 struct LocalNotificationManager {
     
     // To schedule reminders with required configurations
     static func scheduleNotification(id: String, selectedTime: Date, selectedWeekdays: Set<Int>, selectedRingTone: String, completion: @escaping ()->()) {
         let center = UNUserNotificationCenter.current()
-//        center.requestAuthorization(options: [.alert, .sound, .criticalAlert]) { granted, error in
+        //        center.requestAuthorization(options: [.alert, .sound, .criticalAlert]) { granted, error in
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
                 let content = UNMutableNotificationContent()
-//                content.interruptionLevel = .critical
+                //                content.interruptionLevel = .critical
                 content.title = "Reminder"
                 content.body = "Time to change your destiny!"
                 content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(selectedRingTone).mp3"))
@@ -25,8 +26,8 @@ struct LocalNotificationManager {
                 let calendar = Calendar.current
                 
                 _ = calendar.date(bySettingHour: calendar.component(.hour, from: selectedTime),
-                                              minute: calendar.component(.minute, from: selectedTime),
-                                              second: 0, of: selectedTime)
+                                  minute: calendar.component(.minute, from: selectedTime),
+                                  second: 0, of: selectedTime)
                 
                 var dateComponents = calendar.dateComponents([.hour, .minute, .second], from: selectedTime)
                 dateComponents.timeZone = userTimeZone
@@ -56,7 +57,7 @@ struct LocalNotificationManager {
     static func fetchNotifications(completion: @escaping ([ReminderModel] )->()){
         var scheduledNotifications: [String: [UNNotificationRequest]] = [:]
         var formattedNotifications = [ReminderModel]()
-
+        
         UNUserNotificationCenter.current().getPendingNotificationRequests { (reqs) in
             scheduledNotifications = [:]
             for reminder in reqs {
@@ -133,7 +134,7 @@ struct LocalNotificationManager {
     // MARK: - User Default Methods
     
     // Function to Save ReminderModel to UserDefaults
-
+    
     static func saveRemindersToUD(_ reminderModel: [ReminderModel]) {
         do {
             let encoder = JSONEncoder()
@@ -143,7 +144,7 @@ struct LocalNotificationManager {
             print("Error encoding ReminderModel: \(error.localizedDescription)")
         }
     }
-
+    
     // Function to retrieve ReminderModel from UserDefaults
     static func getReminderListFromUD() -> [ReminderModel]? {
         if let encodedData = UserDefaults.standard.data(forKey: "reminderModelKey") {
