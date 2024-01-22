@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32C468532B5A5AE90062A43C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C468522B5A5AE90062A43C /* AppDelegate.swift */; };
 		32D369B82B57B68E00ACF24D /* EditReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B72B57B68E00ACF24D /* EditReminderView.swift */; };
 		32D369BA2B57E03600ACF24D /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D369B92B57E03600ACF24D /* ReminderModel.swift */; };
 		32E473472B56597A006AC563 /* RemindMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E473462B56597A006AC563 /* RemindMeApp.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32C468522B5A5AE90062A43C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D369B72B57B68E00ACF24D /* EditReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReminderView.swift; sourceTree = "<group>"; };
 		32D369B92B57E03600ACF24D /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		32E473432B56597A006AC563 /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 		32E473562B5666D2006AC563 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				32C468522B5A5AE90062A43C /* AppDelegate.swift */,
 				32ED69F92B592C0D0083B739 /* LocalNotificationManager.swift */,
 				32E473542B5666CD006AC563 /* Shake.swift */,
 				32E473682B56A641006AC563 /* Sounds.swift */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C468532B5A5AE90062A43C /* AppDelegate.swift in Sources */,
 				32E473592B56894D006AC563 /* WeekdaySelectionView.swift in Sources */,
 				32E4735B2B5689E7006AC563 /* ReminderListView.swift in Sources */,
 				32E473552B5666CD006AC563 /* Shake.swift in Sources */,

@@ -10,9 +10,11 @@ import SwiftUI
 struct LocalNotificationManager {
     static func scheduleNotification(id: String, selectedTime: Date, selectedWeekdays: Set<Int>, selectedRingTone: String, completion: @escaping ()->()) {
         let center = UNUserNotificationCenter.current()
+//        center.requestAuthorization(options: [.alert, .sound, .criticalAlert]) { granted, error in
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
                 let content = UNMutableNotificationContent()
+//                content.interruptionLevel = .critical
                 content.title = "Reminder"
                 content.body = "Time to change your destiny!"
                 content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(selectedRingTone).mp3"))
